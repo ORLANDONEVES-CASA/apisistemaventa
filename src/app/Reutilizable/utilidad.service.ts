@@ -13,7 +13,7 @@ export class UtilidadService {
 
   MostrarAlerta(mensaje:string, tipo:string)
   {
-    this._snackbar.open(mensaje,tipo{
+    this._snackbar.open(mensaje,tipo,{
       horizontalPosition:"end",
       verticalPosition:"top",
       duration:3000
