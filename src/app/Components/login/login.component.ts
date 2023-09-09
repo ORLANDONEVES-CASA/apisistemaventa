@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit
 
   ngOnInit(): void
   {
-    IniciarSesion()
+    iniciarSesion()
     {
       this.MostrarLoading = true;
       const request:Login = 
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit
     }
   }
 }
-function IniciarSesion() {
+function iniciarSesion() {
   throw new Error('Function not implemented.');
 }
 
