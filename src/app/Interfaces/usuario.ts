@@ -1,5 +1,5 @@
 export interface Usuario {
-    UsuarioID:number
+    UsuarioId:number
     NombreCompleto:string
     Correo:string
     RolID:number

@@ -1,5 +1,5 @@
 export interface Producto {
-    ProductoID:number,
+    ProductoId:number,
     Nombre:string,
     CategoriaID:number,
     DescripcionCategoria:string,

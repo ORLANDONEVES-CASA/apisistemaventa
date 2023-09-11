@@ -1,7 +1,7 @@
 import { DetalleVenta } from "./detalle-venta"
 
 export interface Venta {
-    VentaID?:number,
+    VentaId:number,
     NumeroDocumento:string,
     TipoPago:string,
     Stock:number,

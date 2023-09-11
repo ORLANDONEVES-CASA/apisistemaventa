@@ -1,5 +1,5 @@
 export interface Menu {
-    MenuID:number
+    MenuId:number
     Nombre:string
     Icono:string
     link:string

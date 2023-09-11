@@ -5,7 +5,7 @@ import { Route, Router } from '@angular/router';
 import { Login } from 'src/app/Interfaces/login';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
-import { transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-login',
@@ -37,41 +37,42 @@ export class LoginComponent implements OnInit
 
   ngOnInit(): void
   {
-    iniciarSesion()
+  }
+
+  iniciarSesion()
+  {
+    this.MostrarLoading = true;
+    const request:Login = 
     {
-      this.MostrarLoading = true;
-      const request:Login = 
-      {
-        Correo:this.FormularioLogin.value.email,
-        Clave:this.FormularioLogin.value.password
-      }
-      this.usuarioServicio.IniciarSecion(request).subscribe
-      ({
-        next: (data) =>
-        {
-          if(data.status)
-          {
-            this.utilidadservicio.GuardarSesionUsuario(data.value);
-            this.router.navigate(["pages"])
-          }
-          else
-          {
-            this.utilidadservicio.MostrarAlerta("No se puede encontrar resultados","Opps!");
-          }
-        },
-        complete:() =>
-        {
-          this.MostrarLoading=false;
-        },
-        error: ()=>
-        {
-          this.utilidadservicio.MostrarAlerta("Error, hubo problemas al cargar", "Opps!");
-        }
-      })
+      Correo:this.FormularioLogin.value.email,
+      Clave:this.FormularioLogin.value.password,
     }
+    this.usuarioServicio.IniciarSesion(request).subscribe
+    ({
+      next: (data) =>
+      {
+        if(data.status)
+        {
+          this.utilidadservicio.GuardarSesionUsuario(data.value);
+          this.router.navigate(["pages"])
+        }
+        else
+        {
+          this.utilidadservicio.MostrarAlerta("No se puede encontrar coinsidencias","Opps!");
+        }
+      },
+      complete:() =>
+      {
+        this.MostrarLoading=true;
+        
+      },
+      error: ()=>
+      {
+        this.utilidadservicio.MostrarAlerta("Error, hubo problemas al cargar", "Opps!");
+      },
+    })
   }
 }
-function iniciarSesion() {
-  throw new Error('Function not implemented.');
-}
+
+
 

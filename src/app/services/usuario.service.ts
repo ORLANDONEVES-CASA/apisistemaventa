@@ -21,7 +21,7 @@ import { Injectable } from '@angular/core';
     
     constructor(private http:HttpClient) { }
 
-    IniciarSecion(request:Login):Observable<ResponseApi>
+    IniciarSesion(request:Login):Observable<ResponseApi>
     {
       return this.http.post<ResponseApi>(`${this.UrlApi}IniciarSecion`, request)
     }
