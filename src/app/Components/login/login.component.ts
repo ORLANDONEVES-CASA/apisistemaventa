@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Login } from 'src/app/Interfaces/login';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
@@ -24,14 +24,15 @@ export class LoginComponent implements OnInit
   (
     private fb:FormBuilder,
     private router:Router,
-    private usuarioServicio: UsuarioService,
-    private utilidadservicio: UtilidadService
+    private _usuarioServicio: UsuarioService,
+    private _utilidadservicio: UtilidadService
   )
+
   {
     this.FormularioLogin = this.fb.group
     ({
-      email:["", Validators.required],
-      password:["", Validators.required]
+      email:['', Validators.required],
+      password:['', Validators.required]
     });
   }
 
@@ -45,30 +46,30 @@ export class LoginComponent implements OnInit
     const request:Login = 
     {
       Correo:this.FormularioLogin.value.email,
-      Clave:this.FormularioLogin.value.password,
+      Clave:this.FormularioLogin.value.password
     }
-    this.usuarioServicio.IniciarSesion(request).subscribe
+    this._usuarioServicio.IniciarSesion(request).subscribe
     ({
       next: (data) =>
       {
         if(data.status)
         {
-          this.utilidadservicio.GuardarSesionUsuario(data.value);
+          this._utilidadservicio.GuardarSesionUsuario(data.value);
           this.router.navigate(["pages"])
         }
         else
         {
-          this.utilidadservicio.MostrarAlerta("No se puede encontrar coinsidencias","Opps!");
+          this._utilidadservicio.MostrarAlerta("No se encontró coinsidencias","Opps!")
         }
       },
       complete:() =>
       {
-        this.MostrarLoading=true;
+        this.MostrarLoading=false;
         
       },
       error: ()=>
       {
-        this.utilidadservicio.MostrarAlerta("Error, hubo problemas al cargar", "Opps!");
+        this._utilidadservicio.MostrarAlerta("Error, hubo problemas al cargar", "Opps!")
       },
     })
   }
