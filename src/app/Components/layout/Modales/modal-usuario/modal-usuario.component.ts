@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit, inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Rol } from 'src/app/Interfaces/rol';
 import { Usuario } from 'src/app/Interfaces/usuario';
@@ -8,7 +8,6 @@ import { Usuario } from 'src/app/Interfaces/usuario';
 import { RolService } from 'src/app/services/rol.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
-import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-modal-usuario',
@@ -22,6 +21,7 @@ export class ModalUsuarioComponent implements OnInit
   TituloAccion:string="Agregar";
   BotonAccion:string="Guardar";
   ListaRoles:Rol[]=[];
+  item: any;
 
   constructor
   (
@@ -39,7 +39,7 @@ export class ModalUsuarioComponent implements OnInit
       Correo: ["", Validators.required],
       RolId: ["", Validators.required],
       Clave: ["", Validators.required],
-      esActivo: ["1", Validators.required]
+      Activo: ["1", Validators.required]
     });
     if (this.DatosUsuario!=null)
     {
