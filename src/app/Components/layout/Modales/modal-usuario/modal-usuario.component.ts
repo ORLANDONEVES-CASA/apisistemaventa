@@ -21,7 +21,6 @@ export class ModalUsuarioComponent implements OnInit
   TituloAccion:string="Agregar";
   BotonAccion:string="Guardar";
   ListaRoles:Rol[]=[];
-  item: any;
 
   constructor
   (
@@ -69,7 +68,7 @@ export class ModalUsuarioComponent implements OnInit
       ({
         NombreCompleto: this.DatosUsuario.NombreCompleto,
         Correo: this.DatosUsuario.Correo,
-        RolId: this.DatosUsuario.RolId,
+        rolId: this.DatosUsuario.RolId,
         Clave: this.DatosUsuario.Clave,
         esActivo: this.DatosUsuario.Activo.toString()
       })
