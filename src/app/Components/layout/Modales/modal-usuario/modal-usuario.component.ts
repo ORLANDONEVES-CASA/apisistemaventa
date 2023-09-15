@@ -29,16 +29,16 @@ export class ModalUsuarioComponent implements OnInit
     private fb: FormBuilder,
     private _RolServicio: RolService,
     private _UsuarioServicio: UsuarioService,
-    private _UtilidadServicio: UtilidadService
+    private _UtilidadServicio: UtilidadService,
   )
   {
     this.FormularioUsuario = this.fb.group
     ({
-      NombreCompleto: ["", Validators.required],
-      Correo: ["", Validators.required],
-      RolId: ["", Validators.required],
-      Clave: ["", Validators.required],
-      Activo: ["1", Validators.required]
+      NombreCompleto: ['', Validators.required],
+      Correo: ['', Validators.required],
+      RolId: ['', Validators.required],
+      Clave: ['', Validators.required],
+      Activo: ['1', Validators.required]
     });
     if (this.DatosUsuario!=null)
     {
@@ -68,16 +68,16 @@ export class ModalUsuarioComponent implements OnInit
       ({
         NombreCompleto: this.DatosUsuario.NombreCompleto,
         Correo: this.DatosUsuario.Correo,
-        rolId: this.DatosUsuario.RolId,
+        RolId: this.DatosUsuario.RolId,
         Clave: this.DatosUsuario.Clave,
-        esActivo: this.DatosUsuario.Activo.toString()
+        Activo: this.DatosUsuario.Activo.toString()
       })
     }
   }
 
   GuardarEditar_usuario()
   {
-    const _usuario:Usuario=
+    const _usuario:Usuario =
     {
       UsuarioId:this.DatosUsuario == null ? 0:this.DatosUsuario.UsuarioId,
       NombreCompleto: this.FormularioUsuario.value.NombreCompleto,

@@ -4,7 +4,7 @@
 
 <mat-dialog-content>
     <form [formGroup]="FormularioUsuario">
-        <mat-grid-list cols="2" rowHeight="80px">
+        <mat-grid-list cols="2" rowHeight="90px">
 
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
@@ -27,7 +27,7 @@
                     <mat-label>Rol</mat-label>
                     <mat-select formControlName="RolId">
                         <mat-option *ngFor="let item of ListaRoles" [value]="item.RolId">
-                            {{item.Nombre}}
+                            {{item.Nombre}} 
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -48,14 +48,10 @@
 
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
-                    <mat-label>Estado</mat-label>
+                    <mat-label>estado</mat-label>
                     <mat-select formControlName="Activo">
-                        <mat-option [value]="1">
-                            Activo 
-                        </mat-option>
-                        <mat-option [value]="0">
-                            No activo
-                        </mat-option>
+                        <mat-option value="1">Activo</mat-option>
+                        <mat-option value="0">No activo</mat-option>
                     </mat-select>
                 </mat-form-field>
             </mat-grid-tile>
@@ -70,12 +66,10 @@
         Volver
     </button>
 
-
-
-    <button class="full-width" mat-raised-button color="primary" type="submit" [disabled]="FormularioUsuario.invalid" (click)="GuardarEditar_usuario">
+    <button class="full-width" mat-raised-button color="primary"
+        [disabled]="FormularioUsuario.invalid"
+        (click)="GuardarEditar_usuario">
         {{BotonAccion}} 
     </button>
-
-
 </mat-dialog-actions>
 

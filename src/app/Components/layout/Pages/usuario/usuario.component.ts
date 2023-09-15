@@ -38,7 +38,7 @@ ObtenerUsuario()
       {
         if (data.status)
         {
-          this.DataListaUsuario=data.value
+          this.DataListaUsuario.data = data.value
         }
         else
         {
@@ -79,7 +79,7 @@ NuevoUsuario()
   .afterClosed()
   .subscribe(resultado => 
     {
-      if (resultado === "true")
+      if (resultado == "true")
       {
         this.ObtenerUsuario();
       }
@@ -99,7 +99,7 @@ EditarUsuario(Usuario:Usuario)
   .afterClosed()
   .subscribe(resultado => 
     {
-      if (resultado === "true")
+      if (resultado == "true")
       {
         this.ObtenerUsuario();
       }
@@ -114,10 +114,10 @@ EliminarUsuario(Usuario:Usuario)
     title: "¿desea eliminar el usuario?",
     text:Usuario.NombreCompleto,
     icon:"warning",
-    confirmButtonColor: "#30856d",
+    confirmButtonColor: "#3085d6",
     confirmButtonText: "si, Eliminar",
     showCancelButton:true,
-    cancelButtonColor:"#d333",
+    cancelButtonColor:"#d33",
     cancelButtonText:"No, Volver"
   })
   .then
@@ -146,5 +146,4 @@ EliminarUsuario(Usuario:Usuario)
     }
   })
 }
-
 }
