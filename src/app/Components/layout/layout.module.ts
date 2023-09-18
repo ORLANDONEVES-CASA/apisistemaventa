@@ -27,6 +27,7 @@ import { ModalUsuarioComponent } from './Modales/modal-usuario/modal-usuario.com
   imports: [
     CommonModule,
     LayoutRoutingModule,
+
     SharedModule
   ]
 })

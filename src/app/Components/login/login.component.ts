@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit
     private _usuarioServicio: UsuarioService,
     private _utilidadservicio: UtilidadService
   )
-
   {
     this.FormularioLogin = this.fb.group
     ({

@@ -10,7 +10,7 @@
 
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav opened="true" mode="side" style="width: 200px;">
+    <mat-sidenav #sidenav opened="false" mode="side" style="width: 200px;">
         <mat-nav-list>
 
             <mat-list-item routerLink="/pages/dashboard">
@@ -36,7 +36,7 @@
 
             <mat-list-item routerLink="/pages/historial_venta">
                 <mat-icon matListItemIcon>edit_note</mat-icon>
-                <div mat-line>Historial venta</div>
+                <div mat-line>Historial ventas</div>
             </mat-list-item>
 
             <mat-list-item routerLink="/pages/reportes">
@@ -50,7 +50,6 @@
     <mat-sidenav-content>
         <div style="height: 90vh;">
             <router-outlet>
-
             </router-outlet>
         </div>
     </mat-sidenav-content>
