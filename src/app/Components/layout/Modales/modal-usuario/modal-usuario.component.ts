@@ -35,10 +35,10 @@ export class ModalUsuarioComponent implements OnInit
     this.FormularioUsuario = this.fb.group
     ({
       NombreCompleto: ['', Validators.required],
-      Correo: ['', Validators.required],
-      RolId: ['', Validators.required],
-      Clave: ['', Validators.required],
-      Activo: ['1', Validators.required]
+      correo: ['', Validators.required],
+      rolid: ['', Validators.required],
+      clave: ['', Validators.required],
+      activo: ['1', Validators.required]
     });
     if (this.DatosUsuario!=null)
     {
@@ -66,11 +66,11 @@ export class ModalUsuarioComponent implements OnInit
     {
       this.FormularioUsuario.patchValue
       ({
-        NombreCompleto: this.DatosUsuario.NombreCompleto,
-        Correo: this.DatosUsuario.Correo,
-        RolId: this.DatosUsuario.RolId,
-        Clave: this.DatosUsuario.Clave,
-        Activo: this.DatosUsuario.Activo.toString()
+        NombreCompleto: this.DatosUsuario.nombrecompleto,
+        Correo: this.DatosUsuario.correo,
+        RolId: this.DatosUsuario.rolid,
+        Clave: this.DatosUsuario.clave,
+        Activo: this.DatosUsuario.activo.toString()
       })
     }
   }
@@ -79,13 +79,13 @@ export class ModalUsuarioComponent implements OnInit
   {
     const _usuario:Usuario =
     {
-      UsuarioId:this.DatosUsuario == null ? 0:this.DatosUsuario.UsuarioId,
-      NombreCompleto: this.FormularioUsuario.value.NombreCompleto,
-      Correo: this.FormularioUsuario.value.Correo,
-      RolId: this.FormularioUsuario.value.RolId,
-      RolDescripcion: "",
-      Clave: this.FormularioUsuario.value.Clave,
-      Activo: parseInt(this.FormularioUsuario.value.Activo)
+      usuarioid: this.FormularioUsuario == null ? 0:this.DatosUsuario.usuarioid,
+      nombrecompleto: this.FormularioUsuario.value.nombrecompleto,
+      correo: this.FormularioUsuario.value.correo,
+      rolid: this.FormularioUsuario.value.rolid,
+      roldescripcion: "",
+      clave: this.FormularioUsuario.value.clave,
+      activo: parseInt(this.FormularioUsuario.value.activo)
     }
     if (this.DatosUsuario == null)
     {

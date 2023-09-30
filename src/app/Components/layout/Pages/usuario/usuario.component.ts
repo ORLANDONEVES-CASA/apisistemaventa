@@ -112,7 +112,7 @@ EliminarUsuario(Usuario:Usuario)
   Swal.fire
   ({
     title: "¿desea eliminar el usuario?",
-    text:Usuario.NombreCompleto,
+    text:Usuario.nombrecompleto,
     icon:"warning",
     confirmButtonColor: "#3085d6",
     confirmButtonText: "si, Eliminar",
@@ -125,7 +125,7 @@ EliminarUsuario(Usuario:Usuario)
   {
     if (Resultado.isConfirmed)
     {
-      this._UsuarioServicio.Eliminar(Usuario.UsuarioId).subscribe
+      this._UsuarioServicio.Eliminar(Usuario.usuarioid).subscribe
       ({
         next:(data)=>
         {
