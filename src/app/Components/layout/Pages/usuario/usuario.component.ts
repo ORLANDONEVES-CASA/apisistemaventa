@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 })
 export class UsuarioComponent implements OnInit, AfterViewInit
 {
-  ColumnasTablas: string[] = ['NombreCompleto','correo','rolDescripcion','estado','acciones'];
+  ColumnasTablas: string[] = ['nombrecompleto','correo','roldescripcion','estado','acciones'];
   DataInicio: Usuario[] = [];
   DataListaUsuario = new MatTableDataSource(this.DataInicio);
   @ViewChild(MatPaginator) PaginacionTabla!: MatPaginator;
@@ -112,7 +112,7 @@ EliminarUsuario(Usuario:Usuario)
   Swal.fire
   ({
     title: "¿desea eliminar el usuario?",
-    text:Usuario.nombrecompleto,
+    text:Usuario.nombreCompleto,
     icon:"warning",
     confirmButtonColor: "#3085d6",
     confirmButtonText: "si, Eliminar",
@@ -125,7 +125,7 @@ EliminarUsuario(Usuario:Usuario)
   {
     if (Resultado.isConfirmed)
     {
-      this._UsuarioServicio.Eliminar(Usuario.usuarioid).subscribe
+      this._UsuarioServicio.Eliminar(Usuario.usuarioId).subscribe
       ({
         next:(data)=>
         {

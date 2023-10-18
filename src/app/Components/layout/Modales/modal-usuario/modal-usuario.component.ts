@@ -60,30 +60,30 @@ export class ModalUsuarioComponent implements OnInit
     })
   }
 
-  ngOnInit(): void
-  {
-    if (this.DatosUsuario!=null)
-    {
-      this.FormularioUsuario.patchValue
-      ({
-        nombrecompleto: this.DatosUsuario.nombrecompleto,
-        correo: this.DatosUsuario.correo,
-        rolid: this.DatosUsuario.rolid,
-        clave: this.DatosUsuario.clave,
-        activo: this.DatosUsuario.activo.toString()
-      })
-    }
-  }
+   ngOnInit(): void
+   {
+     if (this.DatosUsuario!=null)
+     {
+       this.FormularioUsuario.patchValue
+       ({
+         nombrecompleto: this.DatosUsuario.nombreCompleto,
+         correo: this.DatosUsuario.correo,
+         rolId: this.DatosUsuario.rolId,
+         clave: this.DatosUsuario.clave,
+         activo: this.DatosUsuario.activo.toString()
+       })
+     }
+   }
 
-  GuardarEditar_usuario()
-  {
+   GuardarEditar_usuario()
+   {
     const _usuario:Usuario =
     {
-      usuarioid: this.FormularioUsuario == null ? 0:this.DatosUsuario.usuarioid,
-      nombrecompleto: this.FormularioUsuario.value.nombrecompleto,
+      usuarioId: this.FormularioUsuario == null ? 0:this.DatosUsuario.usuarioId,
+      nombreCompleto: this.FormularioUsuario.value.nombreCompleto,
       correo: this.FormularioUsuario.value.correo,
-      rolid: this.FormularioUsuario.value.rolid,
-      roldescripcion: "",
+      rolId: this.FormularioUsuario.value.rolId,
+      rolDescripcion: "",
       clave: this.FormularioUsuario.value.clave,
       activo: parseInt(this.FormularioUsuario.value.activo)
     }

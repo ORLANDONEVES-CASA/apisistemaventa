@@ -1,9 +1,9 @@
  export interface Usuario {
-    usuarioid:number,
-    nombrecompleto:string,
+    usuarioId:number,
+    nombreCompleto:string,
     correo:string,
-    rolid:number,
-    roldescripcion:string,
+    rolId:number,
+    rolDescripcion:string,
     clave:string,
     activo:number
 }
