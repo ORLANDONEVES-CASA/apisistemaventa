@@ -9,7 +9,7 @@
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
                     <mat-label>Nombre Completo</mat-label>
-                    <input matInput autocomplete="off" formControlName="NombreCompleto">
+                    <input matInput autocomplete="off" formControlName="nombrecompleto">
                     <mat-icon matSuffix>account-box</mat-icon>
                 </mat-form-field>
             </mat-grid-tile>
@@ -17,7 +17,7 @@
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
                     <mat-label>Correo</mat-label>
-                    <input matInput autocomplete="off" formControlName="Correo">
+                    <input matInput autocomplete="off" formControlName="correo">
                     <mat-icon matSuffix>mail</mat-icon>
                 </mat-form-field>
             </mat-grid-tile>
@@ -39,7 +39,7 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Contraseña</mat-label>
                     <input matInput [type]="OcultarPassword?'password':'text'"
-                    formControlName="Clave">
+                    formControlName="clave">
                     <button mat-icon-button matSuffix (click)="OcultarPassword = !OcultarPassword" type="button">
                         <mat-icon matSuffix>
                             {{OcultarPassword ? 'visibility_off':'visibility'}}
