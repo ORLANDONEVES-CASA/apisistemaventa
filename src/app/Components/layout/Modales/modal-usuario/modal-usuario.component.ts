@@ -36,7 +36,7 @@ export class ModalUsuarioComponent implements OnInit
     ({
       nombrecompleto: ['', Validators.required],
       correo: ['', Validators.required],
-      rolid: ['', Validators.required],
+      rolId: ['', Validators.required],
       clave: ['', Validators.required],
       activo: ['1', Validators.required]
     });
@@ -82,7 +82,7 @@ export class ModalUsuarioComponent implements OnInit
       usuarioId: this.FormularioUsuario == null ? 0:this.DatosUsuario.usuarioId,
       nombreCompleto: this.FormularioUsuario.value.nombreCompleto,
       correo: this.FormularioUsuario.value.correo,
-      rolId: this.FormularioUsuario.value.rolId,
+      rolId: this.FormularioUsuario.value.rolid,
       rolDescripcion: "",
       clave: this.FormularioUsuario.value.clave,
       activo: parseInt(this.FormularioUsuario.value.activo)
