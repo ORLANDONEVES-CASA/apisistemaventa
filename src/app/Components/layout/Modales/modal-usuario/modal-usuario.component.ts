@@ -38,7 +38,7 @@ export class ModalUsuarioComponent implements OnInit
       correo: ['', Validators.required],
       rolId: ['', Validators.required],
       clave: ['', Validators.required],
-      activo: ['1', Validators.required]
+      Activo: ['1', Validators.required]
     });
     if (this.DatosUsuario!=null)
     {
@@ -70,7 +70,7 @@ export class ModalUsuarioComponent implements OnInit
          correo: this.DatosUsuario.correo,
          rolId: this.DatosUsuario.rolId,
          clave: this.DatosUsuario.clave,
-         activo: this.DatosUsuario.activo.toString()
+         activo: this.DatosUsuario.Activo.toString()
        })
      }
    }
@@ -82,10 +82,10 @@ export class ModalUsuarioComponent implements OnInit
       usuarioId: this.FormularioUsuario == null ? 0:this.DatosUsuario.usuarioId,
       nombreCompleto: this.FormularioUsuario.value.nombreCompleto,
       correo: this.FormularioUsuario.value.correo,
-      rolId: this.FormularioUsuario.value.rolid,
+      rolId: this.FormularioUsuario.value.rolId,
       rolDescripcion: "",
       clave: this.FormularioUsuario.value.clave,
-      activo: parseInt(this.FormularioUsuario.value.activo)
+      Activo: parseInt(this.FormularioUsuario.value.activo)
     }
     if (this.DatosUsuario == null)
     {
