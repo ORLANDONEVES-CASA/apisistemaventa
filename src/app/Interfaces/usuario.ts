@@ -5,5 +5,5 @@
     rolId:number,
     rolDescripcion:string,
     clave:string,
-    Activo:number
+    activo:number
 }

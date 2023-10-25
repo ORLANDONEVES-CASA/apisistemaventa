@@ -25,7 +25,7 @@
 
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
-                    <mat-label>Rol</mat-label>
+                    <mat-label>rol</mat-label>
                     <mat-select formControlName="rolId">
                         <mat-option *ngFor="let item of ListaRoles" [value]="item.rolId">
                             {{item.nombre}} 
@@ -51,7 +51,7 @@
 
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
-                    <mat-label>Estado</mat-label>
+                    <mat-label>estado</mat-label>
                     <mat-select formControlName="activo">
                         <mat-option value="1">Activo</mat-option>
                         <mat-option value="0">No activo</mat-option>
