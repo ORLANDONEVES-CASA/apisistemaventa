@@ -4,13 +4,13 @@
 
 <mat-dialog-content>
     <form [formGroup]="FormularioUsuario" (ngSubmit)="GuardarEditar_usuario()">
-        <mat-grid-list cols="2" rowHeight="90px">
+        <mat-grid-list cols="2" rowHeight="85px">
 
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
-                    <mat-label>Nombre Completo</mat-label>
+                    <mat-label>Nombre</mat-label>
                     <input matInput autocomplete="off" formControlName="nombreCompleto">
-                    <mat-icon matSuffix>account-box</mat-icon>
+                    <mat-icon matSuffix>person</mat-icon>
                 </mat-form-field>
             </mat-grid-tile>
 
@@ -25,7 +25,7 @@
 
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
-                    <mat-label>rol</mat-label>
+                    <mat-label>Rol</mat-label>
                     <mat-select formControlName="rolId">
                         <mat-option *ngFor="let item of ListaRoles" [value]="item.rolId">
                             {{item.nombre}} 
@@ -51,18 +51,13 @@
 
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
-                    <mat-label>estado</mat-label>
+                    <mat-label>Estado</mat-label>
                     <mat-select formControlName="activo">
                         <mat-option value="1">Activo</mat-option>
                         <mat-option value="0">No activo</mat-option>
                     </mat-select>
                 </mat-form-field>
             </mat-grid-tile>
-
-
-
-
-
         </mat-grid-list>
     </form>
 
